@@ -1,0 +1,66 @@
+.resume {
+  padding: 9rem 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.heading{
+  color: var(--FontColor);
+}
+
+.box {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.2rem;
+  background: var(--GradientColor);
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: rgb(30, 30, 30);
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.buttonContent {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: var(--GradientColor);
+  transition: all 0.475s;
+}
+
+.Card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: var(--bgCard);
+  color: var(--FontColor);
+}
+
+@media (width>992px) {
+  .Card {
+    width: 50% !important;
+  }
+}

@@ -1,0 +1,49 @@
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--bgColor);
+}
+
+.dark {
+  --bgColor: rgb(20, 20, 20);
+  --bgNav: rgb(15, 15, 15);
+  --GradientColor: linear-gradient(
+    82.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+  --bs-offcanvas-bg: rgb(15, 15, 15);
+  --bs-navbar-toggler-icon-bg: #fff;
+  --bgFooter: rgb(15, 15, 15);
+  --FontColor: #fff;
+  --bgCard: rgb(15, 15, 15);
+  --bgContact: linear-gradient(#212121, #212121) padding-box,
+  linear-gradient(82.3deg,
+  rgba(150, 93, 233, 1) 10.8%,
+  rgba(99, 88, 238, 1) 94.3%) border-box;
+  --bgContactFontColor: #717171;
+  --socialIcon: #ffffff;
+}
+.light {
+  --bgColor: rgb(153, 190, 203);
+  --bgNav: rgb(105, 174, 197);
+  --GradientColor: linear-gradient(
+    82.3deg,
+    rgb(120, 50, 223) 10.8%,
+    rgb(65, 54, 222) 94.3%
+  );
+  --bs-offcanvas-bg: rgb(105, 174, 197);
+  --bs-navbar-toggler-icon-bg: #000;
+  --bgFooter: rgb(105, 174, 197);
+  --FontColor: #1b1919;
+  --bgCard: rgb(105, 174, 197);
+  --bgContact: rgb(105, 174, 197);
+  --bgContactFontColor: #000;
+  --socialIcon: #000;
+}

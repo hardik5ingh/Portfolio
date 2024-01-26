@@ -1,0 +1,109 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bgColor);
+}
+
+.intro div {
+  p {
+    /* background: var(--GradientColor);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; */
+    color: var(--FontColor);
+    font-size: 3.5rem;
+  }
+}
+.typeEffect {
+  display: inline-block;
+
+  h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    font-size: 2rem;
+    background: var(--GradientColor);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: gradient-typing 1.5s steps(30, end), blinkcaret 0.5s infinite;
+  }
+}
+
+@keyframes gradient-typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkcaret {
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #1d4ed8;
+  }
+}
+
+.social span {
+  cursor: pointer;
+}
+
+.social span .oval {
+  transition: 0.2s;
+  fill: var(--socialIcon);
+}
+
+.social span:hover #github {
+  fill: #0f766e;
+}
+
+.social span:hover #linkedin {
+  fill: #0e7490;
+}
+
+.social span:hover #email {
+  fill: #6d28d9;
+}
+
+.social span:hover #twitter {
+  fill: #0f766e;
+}
+
+.social span:hover #insta {
+  fill: #1d4ed8;
+}
+
+.box {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.2rem;
+  background-image: var(--GradientColor);
+}
+
+.about {
+  color: var(--FontColor);
+}
+.aboutText {
+  color: var(--FontColor);
+  opacity: 0.75;
+}
+
+@media (width<992px) {
+  .home {
+    padding: 0 2rem;
+  }
+
+  .intro {
+    padding-top: 10rem;
+  }
+
+  .about {
+    padding-top: 5rem;
+  }
+}
