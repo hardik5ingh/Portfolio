@@ -14,6 +14,13 @@ nav {
   border-radius: 50%;
 }
 
+button span .NavMenuBtn{
+  fill: var(--NavMenuBtn);
+}
+nav ul{
+background-color: var(--bgNav);
+}
+
 
 nav ul li .navNormal {
   color: var(--FontColor);
@@ -24,7 +31,9 @@ nav ul li .navNormal {
   outline: none;
 }
 
-
+.offcanvas-header ,.offcanvas-body{
+  background-color: var(--bgNav);
+}
 nav ul li .navNormal:hover {
   background: var(--GradientColor);
   -webkit-text-fill-color: transparent;
@@ -84,7 +93,7 @@ nav ul li .nav-active {
 }
 
 input:checked + .slider {
-  background: rgb(236, 236, 214);
+  background-color: #F4ECE6;
 }
 
 input:checked + .slider:before {

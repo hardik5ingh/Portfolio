@@ -25,27 +25,29 @@ export default function Resume() {
 
         <div className="d-flex justify-content-center align-items-center ">
           <div
-            className={`${styles.Card} card  w-75 mt-4 py-4  px-lg-5 px-sm-3 px-1`}
+            className={`${styles.Card} card w-75 mt-4 py-4  px-lg-5 px-sm-3 px-1`}
             data-aos="fade-up"
           >
             <h1 className="card-header fs-2">Technical Skills</h1> <hr />
-            <div className={`${styles.cardBody} card-body `}>
+            <div
+              className={`${styles.cardBody} card-body d-flex gap-5 flex-wrap justify-content-center align-items-center p-0`}
+            >
               {ResumeDetails.Skills.map((myskills) => {
                 return (
-                  <div
-                    key={myskills.id}
-                    className="py-3 px-lg-5 px-sm-3 px-2 fs-4"
-                  >
-                    <div className="d-flex align-items-center gap-3 ">
-                      <div className={`${styles.box}`}></div>
-                      <div>{myskills.skill_name}</div>
-                    </div>
+                  <div className={styles.tooltipContainer} key={myskills.id}>
+                    <span className={styles.tooltip}>{myskills.skill_name}</span>
+                    <span>
+                      <img src={myskills.skill_img} alt={myskills.skill_name} />
+                    </span>
                   </div>
                 );
-              }).reverse()}
+              }).reverse()
+              }
             </div>
           </div>
         </div>
+        
+
         <div className="d-flex justify-content-center align-items-center ">
           <div
             className={`${styles.Card} card w-75 mt-5 py-4  px-lg-5 px-sm-3 px-1`}
@@ -77,16 +79,20 @@ export default function Resume() {
             className={`${styles.Card} card  w-75 mt-5 py-4 px-lg-5 px-sm-3 px-1 `}
             data-aos="fade-up"
           >
-            <h1 className="card-header fs-2">Languages</h1> <hr />
+            <h1 className="card-header fs-2">Certifications</h1> <hr />
             <div className={`${styles.cardBody} card-body`}>
-              {ResumeDetails.Languages.map((mylang) => {
+              {ResumeDetails.Certification.map((mycert) => {
                 return (
                   <div
-                    key={mylang.id}
-                    className="d-flex align-items-center gap-3 py-3 px-lg-5 px-sm-3 px-2  fs-4"
+                    key={mycert.id}
+                    className="d-flex align-items-center gap-3 py-3 px-lg-5 fs-4"
                   >
                     <div className={`${styles.box}`}></div>
-                    <div>{mylang.lang_name}</div>
+                    
+                    <Link to={mycert.cert_link} target="_blank" rel="noreferrer" className={`${styles.Cert}`} style={{textDecoration:"none"}}>
+                       <div className="d-flex justify-content-center align-items-center gap-2">{mycert.cert_name} 
+                       <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 512 512"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z" className={styles.extLink}/></svg></div> 
+                    </Link>
                   </div>
                 );
               }).reverse()}

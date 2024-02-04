@@ -30,9 +30,10 @@
   flex-direction: column;
   gap: 20px;
   box-sizing: border-box;
-  border-radius: 16px;
+  border-radius: 5px;
   background-size: 200% 100%;
   animation: gradient 5s ease infinite;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 @keyframes gradient {
@@ -62,7 +63,7 @@
 .formContainer .formGroup {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 20px;
 }
 
 .formContainer .formGroup label {
@@ -75,17 +76,18 @@
 
 .formContainer .formGroup input {
   width: 100%;
-  padding: 12px 16px;
-  border-radius: 8px;
+  /* padding: 12px 16px; */
   color: var(--FontColor);
   font-family: inherit;
   background-color: transparent;
-  border: 1px solid #414141;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #414141;
 }
 
 .formContainer .formGroup textarea {
   width: 100%;
-  /* padding: 12px 16px; */
   border-radius: 8px;
   resize: none;
   color: var(--FontColor);
@@ -118,7 +120,7 @@
   width: 10rem;
   padding: 0 2rem;
   border-radius: .75rem;
-  background: rgb(30, 30, 30);
+  background: var(--CatBtn);
   background-size: 400%;
   color: #fff;
   border: none;

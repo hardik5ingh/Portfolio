@@ -5,11 +5,24 @@
   background-color: var(--bgColor);
 }
 
+
+.myPic{
+  border-radius: 2rem;
+  background: var(--bgIntro);
+
+  .img{
+   background: var(--bgmyPicCircle);
+    border-radius: 50%;
+    padding: .4rem;
+  }
+  img{
+    height: 10rem;
+    border-radius: 50%;
+
+  }
+}
 .intro div {
   p {
-    /* background: var(--GradientColor);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text; */
     color: var(--FontColor);
     font-size: 3.5rem;
   }
@@ -50,6 +63,9 @@
   }
 }
 
+.social{
+  gap: 2rem;
+}
 .social span {
   cursor: pointer;
 }
@@ -91,19 +107,21 @@
 }
 .aboutText {
   color: var(--FontColor);
-  opacity: 0.75;
 }
 
 @media (width<992px) {
-  .home {
-    padding: 0 2rem;
-  }
 
   .intro {
-    padding-top: 10rem;
+    padding-top: 7rem;
   }
 
   .about {
-    padding-top: 5rem;
+    padding-top: 3rem;
+    padding-right: 2rem;
   }
+}
+@media (width<450px) {
+.myPic div p{
+  font-size: 3rem;
+}
 }
