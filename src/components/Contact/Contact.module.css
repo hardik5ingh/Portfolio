@@ -5,21 +5,25 @@
   min-height: 100vh;
 }
 
-.box {
-  width: 1rem;
-  height: 1rem;
-  border-radius: .2rem;
-  background: var(--GradientColor);
-}
-
-.heading{
+.heading {
   color: var(--FontColor);
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  span {
+    width: 5rem;
+    height: .3rem;
+    border-radius: .5rem;
+    background: var(--GradientColor);
+  }
 }
 
 
 
 .formContainer {
-  width: 400px;
+  width: 50%;
   background: var(--bgContact);
   border: 2px solid transparent;
   padding: 32px 24px;
@@ -34,6 +38,12 @@
   background-size: 200% 100%;
   animation: gradient 5s ease infinite;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+@media(width<768px) {
+  .formContainer {
+    width: 100%;
+  }
 }
 
 @keyframes gradient {
@@ -76,7 +86,6 @@
 
 .formContainer .formGroup input {
   width: 100%;
-  /* padding: 12px 16px; */
   color: var(--FontColor);
   font-family: inherit;
   background-color: transparent;
@@ -110,42 +119,26 @@
 }
 
 
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  height: 4rem;
-  width: 10rem;
-  padding: 0 2rem;
-  border-radius: .75rem;
-  background: var(--CatBtn);
-  background-size: 400%;
-  color: #fff;
-  border: none;
+
+.form button {
+  font-size: 18px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
   cursor: pointer;
-}
-
-.button:hover::before {
-  transform: scaleX(1);
-}
-
-.buttonContent {
-  position: relative;
-  z-index: 1;
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  width: 100%;
-  height: inherit;
-  border-radius: inherit;
+  will-change: box-shadow, transform;
   background: var(--GradientColor);
-  transition: all 0.475s;
+  box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+  padding: 0 2em;
+  border-radius: 0.3em;
+  height: 2.6em;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+
+
+}
+
+.form button:hover {
+  box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px transparent;
+  transform: translateY(-0.1em);
 }

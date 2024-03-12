@@ -3,15 +3,15 @@ export default function Contact() {
   return (
     <>
       <main
-        className={`${styles.contact} d-flex flex-column justify-content-center align-items-center`}
-      >
-        <p
-          className={`${styles.heading} d-flex justify-content-center align-items-center gap-3 fs-1 fw-bold`}
-        >
-          <span className={`${styles.box}`}></span> Let's Talk
-        </p>
+        className={`${styles.contact} d-flex flex-column justify-content-center align-items-center`}>
+        <div className={`${styles.heading} pb-5 d-flex flex-column justify-content-center align-items-center gap-4 fw-bold`} data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+          <h1>LET'S TALK</h1>
+          <span></span>
+          <p className="fs-4 px-5">Feel free to Contact me by submitting the form below and I will get back to you as soon as possible
+            Name</p>
+        </div>
         <div className="container d-flex justify-content-center px-5 px-md-0">
-          <div className={`${styles.formContainer}`} data-aos="fade-up">
+          <div className={`${styles.formContainer}`} data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
             <form
               className={styles.form}
               action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSfQOgue7aPUBlqS3JzT4K0pNzlRMlQFN-yF7rZdlLAWT4dYTQ/formResponse"
@@ -40,13 +40,14 @@ export default function Contact() {
                   name="entry.1920558757"
                 />
               </div>
-              <div className="d-flex justify-content-center align-items-center">
-                <button
+              <div className="submitbtn d-flex justify-content-center align-items-center">
+                {/* <button
                   type="submit"
                   className={`${styles.button} fw-bold fs-5`}
                 >
                   <span className={styles.buttonContent}>Submit</span>
-                </button>
+                </button> */}
+                <button>Submit</button>
               </div>
             </form>
           </div>

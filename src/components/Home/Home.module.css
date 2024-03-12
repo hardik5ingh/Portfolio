@@ -1,0 +1,118 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+
+  h1 {
+    color: var(--FontColor);
+    font-size: 6rem;
+  }
+
+  p {
+    font-size: 3rem;
+    color: var(--FontColor);
+  }
+
+  .cta span {
+    letter-spacing: 4px;
+
+    a {
+      color: var(--FontColor);
+    }
+  }
+
+  .cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+
+    path {
+      fill: var(--NavMenuBtn);
+    }
+  }
+
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+
+  .cta:active svg {
+    transform: scale(0.9);
+  }
+
+  .hoverAnimation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--NavMenuBtn);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .cta:hover .hoverAnimation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .projectBtn {
+    font-size: 18px;
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    will-change: box-shadow, transform;
+    background: var(--GradientColor);
+    box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+    padding: 0 2em;
+    border-radius: 0.3em;
+    height: 2.6em;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+
+    a {
+      color: #f7f4f4;
+    }
+
+  }
+
+  .projectBtn:hover {
+    box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px transparent;
+    transform: translateY(-0.1em);
+  }
+
+}
+
+@media(width<768px){
+  .main{
+    h1{
+      font-size: 4rem;
+    }
+    p{
+      font-size: 2.2rem;
+    }
+  }
+}
+@media(width<550px){
+  .main{
+    h1{
+      font-size: 2.7rem;
+    }
+    p{
+      font-size: 1.7rem;
+    }
+  }
+}
+@media(width<400px){
+  .main{
+    h1{
+      font-size: 2.3rem;
+    }
+    p{
+      font-size: 1.5rem;
+    }
+  }
+}

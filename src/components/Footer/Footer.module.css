@@ -1,48 +1,37 @@
 footer {
-  box-shadow: 0px -0.5px 10px 2px rgba(0, 0, 0, 0.1);
   background-color: var(--bgFooter);
 }
 
-footer .name .linktree {
-  color: var(--FontColor);
-  text-decoration: none;
+footer .name {
+  .copyright {
+    color: var(--FontColor);
+  }
+
+  .designed {
+    background: var(--GradientColor);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
 }
-footer .name .linktree:hover {
-  background: var(--GradientColor);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-}
+
 
 .write span {
   color: var(--FontColor);
 }
+
 .social {
   color: var(--FontColor);
 }
+
 .social span {
   cursor: pointer;
 }
 
-.social span .oval {
-  transition: 0.2s;
-  fill: var(--socialIcon);
+
+.social .socialIcon {
+  fill: var(--FontColor);
 }
 
-.social span:hover #github {
-  fill: #0f766e;
+.social span:hover .socialIcon {
+  fill: var(--SocialIcconHover);
 }
-
-.social span:hover #linkedin {
-  fill: #0e7490;
-}
-
-.social span:hover #twitter {
-  fill: #0f766e;
-}
-
-.social span:hover #insta {
-  fill: #1d4ed8;
-}
-
-
-
