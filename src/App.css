@@ -22,8 +22,6 @@ body {
   --skillsBtn:rgb(12,12,12);
   --SocialIcconHover:rgb(240, 240, 240);
   --GradientColor: linear-gradient(82.3deg,rgba(150, 93, 233, 1) 10.8%,rgba(99, 88, 238, 1) 94.3%);
-  /* --bs-offcanvas-bg: rgb(15, 15, 15); */
-  /* --bs-navbar-toggler-icon-bg: #fff; */
   --bgFooter: rgb(18, 18, 18);
   --FontColor: rgb(171, 166, 166);
   --ExtBtn:#ffffff;
@@ -44,8 +42,6 @@ body {
   --skillsBtn:#ffffff;
   --SocialIcconHover:rgb(74, 71, 71);
   --GradientColor: linear-gradient(90deg,  #418AFF, #4d91ff);
-  /* --bs-offcanvas-bg: rgb(105, 174, 197); */
-  /* --bs-navbar-toggler-icon-bg: #000; */
   --bgFooter: #ffffff;
   --FontColor: #1b1a1a;
   --ExtBtn:#418AFF;
@@ -56,3 +52,6 @@ body {
   --socialIcon: #000;
   --catBtn:#418AFF;
 }
+
+
+

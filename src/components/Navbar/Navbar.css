@@ -15,6 +15,7 @@ nav {
 
 button span .NavMenuBtn{
   fill: var(--NavMenuBtn);
+  stroke: var(--NavMenuBtn);
 }
 nav ul{
 background-color: var(--bgNav);

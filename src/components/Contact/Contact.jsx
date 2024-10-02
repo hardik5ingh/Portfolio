@@ -7,8 +7,7 @@ export default function Contact() {
         <div className={`${styles.heading} pb-5 d-flex flex-column justify-content-center align-items-center gap-4 fw-bold`} data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
           <h1>LET'S TALK</h1>
           <span></span>
-          <p className="fs-4 px-5">Feel free to Contact me by submitting the form below and I will get back to you as soon as possible
-            Name</p>
+          <p className="fs-4 px-5">Feel free to Contact me by submitting the form below and I will get back to you as soon as possible</p>
         </div>
         <div className="container d-flex justify-content-center px-5 px-md-0">
           <div className={`${styles.formContainer}`} data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">

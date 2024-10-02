@@ -19,7 +19,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    document.querySelector("body").classList.remove("dark","light");
+    document.querySelector("body").classList.remove("dark", "light");
     document.querySelector("body").classList.add(themeMode);
   }, [themeMode]);
 

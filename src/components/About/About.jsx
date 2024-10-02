@@ -33,8 +33,8 @@ export default function About() {
                             }
                         </div>
                         <div className="d-flex justify-content-sm-start justify-content-center align-items-center">
-                            <button class={`${styles.cta} mt-5 border-0 bg-transparent `}>
-                                <span class={`${styles.hoverAnimation} pb-3 fs-4 fw-medium pe-3 position-relative`}> <Link target="_blank" to="https://drive.google.com/file/d/19HLycOrLH1fNbk4D0a0Xmh2BLpi9uuke/view?usp=sharing" className="text-decoration-none">RESUME</Link> </span>
+                            <button className={`${styles.cta} mt-5 border-0 bg-transparent `}>
+                                <span className={`${styles.hoverAnimation} pb-3 fs-4 fw-medium pe-3 position-relative`}> <Link target="_blank" to="https://drive.google.com/file/d/19HLycOrLH1fNbk4D0a0Xmh2BLpi9uuke/view?usp=sharing" className="text-decoration-none">RESUME</Link> </span>
                                 <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
                                     <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
                                 </svg>
