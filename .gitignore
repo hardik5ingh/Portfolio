@@ -1,4 +1,5 @@
-
+.env 
+credentials.json
 main.css
 main.css.map
 main.scss

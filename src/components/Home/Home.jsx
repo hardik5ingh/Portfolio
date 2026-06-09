@@ -9,7 +9,7 @@ export default function About() {
       <main className={`${styles.main} pt-5 px-5`} >
         <div data-aos="zoom-out" data-aos-easing="linear" data-aos-duration="500" className="d-flex flex-column gap-5 justify-content-center align-items-center">
           <h1>HEY, I'M HARDIK SINGH</h1>
-          <p>A Result-oriented Web Developer</p>
+          <p>A Result-oriented Full Stack Developer</p>
           <button className={`${styles.cta} border-0 bg-transparent `}>
             <span className={`${styles.hoverAnimation} pb-3 fs-4 fw-medium pe-3 position-relative`}> <Link to="https://hartan.netlify.app/" target="_blank" className="text-decoration-none">Hartan.js</Link> </span>
             <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">

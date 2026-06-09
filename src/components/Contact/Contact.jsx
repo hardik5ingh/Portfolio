@@ -1,5 +1,34 @@
+import { useState } from 'react'
 import styles from "./Contact.module.css";
 export default function Contact() {
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [status, setStatus] = useState("")
+
+  function handleChange(e) {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus("Submitting");
+    try {
+      const res = await fetch("http://localhost:3000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setStatus("Submitted");
+        setTimeout(() => setStatus(""), 1000);
+      } else {
+        setStatus(data.error);
+      }
+    } catch {
+      setStatus("Failed");
+    }
+  }
   return (
     <>
       <main
@@ -13,40 +42,28 @@ export default function Contact() {
           <div className={`${styles.formContainer}`} data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
             <form
               className={styles.form}
-              action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSfQOgue7aPUBlqS3JzT4K0pNzlRMlQFN-yF7rZdlLAWT4dYTQ/formResponse"
-              method="POST"
-              target="_blank"
+              onSubmit={handleSubmit}
             >
               <div className={styles.formGroup}>
                 <label htmlFor="name">Name*</label>
-                <input type="text" name="entry.1763577147" id="name" required />
+                <input type="text" name="name" value={form.name} onChange={handleChange} required />
                 <label htmlFor="email">Email*</label>
                 <input
-                  required
-                  name="entry.1449707071"
-                  id="email"
-                  type="email"
+                  required name="email" value={form.email} onChange={handleChange} type="email"
                 />
                 <label htmlFor="subject">Subject</label>
-                <input type="text" name="entry.914395922" id="subject" />
+                <input type="text" name="subject" value={form.subject} onChange={handleChange} />
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="textarea">Message</label>
                 <textarea
                   cols="50"
                   rows="10"
-                  id="textarea"
-                  name="entry.1920558757"
+                  name="message" value={form.message} onChange={handleChange}
                 />
               </div>
               <div className="submitbtn d-flex justify-content-center align-items-center">
-                {/* <button
-                  type="submit"
-                  className={`${styles.button} fw-bold fs-5`}
-                >
-                  <span className={styles.buttonContent}>Submit</span>
-                </button> */}
-                <button>Submit</button>
+                <button disabled={status === "Submitting" || status === "Submitted"}>{status === "Submitting" ? "Submitting..." : status === "Submitted" ? "Submitted" : "Submit"}</button>
               </div>
             </form>
           </div>

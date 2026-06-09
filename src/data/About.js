@@ -7,13 +7,17 @@ export const aboutme = [
 
 
 export const myskills = [
+    "Python",
+    "Numpy",
+    "Pandas",
+    "Sql",
+    "Java",
+    "JavaScript",
     "React JS",
     "React Router",
     "Node JS",
-    "Firebase",
     "Tailwind CSS",
     "Bootstrap",
-    "JavaScript",
     "CSS",
     "HTML",
     "Git",

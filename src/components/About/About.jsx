@@ -13,7 +13,7 @@ export default function About() {
             <div className="container mt-5 py-5">
                 <div className="row gx-lg-4 gy-5 justify-content-around">
                     <div className={`${styles.aboutMe} col-lg-5 col-12 px-5`} data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
-                        <p className="fs-3 fw-bold">I'm a Front-end Developer</p>
+                        <p className="fs-3 fw-bold">Full Stack Developer</p>
                         {
                             aboutme.map((about, id) => {
                                 return <p key={id} className="fs-4 fw-medium lh-lg">{about}</p>

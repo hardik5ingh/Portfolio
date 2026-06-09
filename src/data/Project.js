@@ -5,7 +5,7 @@ export const ProjectList = [
         name: "Random Color Generator",
         img: "/project_images/random-color-generator.png",
         url: "https://random-generator-of-colors.netlify.app/",
-        sourceCode: "https://github.com/hardiksinghmaurya/Random-Color-Generator",
+        sourceCode: "https://github.com/hardik5ingh/Random-Color-Generator",
         techUse: "JavaScript, HTML, CSS"
     },
     {
@@ -14,7 +14,7 @@ export const ProjectList = [
         name: "Flipkart Home Page",
         img: "/project_images/flipkart_img.png",
         url: "https://flipkarthomepage.netlify.app/",
-        sourceCode: "https://github.com/hardiksinghmaurya/Flipkart-Home-Page",
+        sourceCode: "https://github.com/hardik5ingh/Flipkart-Home-Page",
         techUse: "HTML, CSS"
     },
     {
@@ -23,7 +23,7 @@ export const ProjectList = [
         name: "Notes Taking",
         img: "/project_images/notes_img.png",
         url: "https://keep-notes-precisely.netlify.app/",
-        sourceCode: "https://github.com/hardiksinghmaurya/Keep-Notes",
+        sourceCode: "https://github.com/hardik5ingh/Keep-Notes",
         techUse: "JavaScript, HTML, CSS"
     },
     {
@@ -32,7 +32,7 @@ export const ProjectList = [
         name: "Weather App",
         img: "/project_images/weather-img.jpg",
         url: "https://information-of-weather.netlify.app/",
-        sourceCode: "https://github.com/hardiksinghmaurya/Weather-Information",
+        sourceCode: "https://github.com/hardik5ingh/Weather-Information",
         techUse: "APIs(Open Weather Map), JavaScript, HTML, CSS"
     },
     {
@@ -41,7 +41,7 @@ export const ProjectList = [
         name: "Movies App",
         img: "/project_images/movie_img.png",
         url: "https://hardiksingh-movies-hub.netlify.app/",
-        sourceCode: "https://github.com/hardiksinghmaurya/Movie-Hub",
+        sourceCode: "https://github.com/hardik5ingh/Movie-Hub",
         techUse: "ReactJS, API(for movies data), Bootstrap, JavaScript, HTML, CSS"
     },
     {
@@ -50,7 +50,7 @@ export const ProjectList = [
         name: "Random Quote Generator",
         img: "/project_images/quote_img.png",
         url: "https://hindi-shayari.netlify.app/",
-        sourceCode: "https://github.com/hardiksinghmaurya/Shayari",
+        sourceCode: "https://github.com/hardik5ingh/Shayari",
         techUse: "ReactJS, API(farzi vichar api), Bootstrap, JavaScript, HTML, CSS. Also available as an extension and side bar."
     },
     {
@@ -59,7 +59,7 @@ export const ProjectList = [
         name: " Crypto Search",
         img: "/project_images/crypto_img.png",
         url: "https://crypto-search-rank.netlify.app/",
-        sourceCode: "https://github.com/hardiksinghmaurya/Crypto-Search",
+        sourceCode: "https://github.com/hardik5ingh/Crypto-Search",
         techUse: "Integrated API to fetch the real time information of crypto like chart, price, market cap, etc"
     },
     {
@@ -68,7 +68,7 @@ export const ProjectList = [
         name: "Hartan",
         img: "/project_images/HARTAN_1.png",
         url: "https://hartan.netlify.app/",
-        sourceCode: "https://github.com/hardiksinghmaurya/react-hartan",
+        sourceCode: "https://github.com/hardik5ingh/react-hartan",
         techUse: " Hartan is a UI component library built on React JS and distributed as a npm package.",
     },
 ]
