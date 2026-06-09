@@ -12,7 +12,7 @@ export default function Contact() {
     e.preventDefault();
     setStatus("Submitting");
     try {
-      const res = await fetch("http://localhost:3000/api/contact", {
+      const res = await fetch("/.netlify/functions/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
