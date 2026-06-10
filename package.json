@@ -11,9 +11,10 @@
     "start": "node src/components/Contact/form.js"
   },
   "engines": {
-    "node":"24.x"
+    "node": "24.x"
   },
   "dependencies": {
+    "@types/node": "^25.9.2",
     "aos": "^2.3.4",
     "apis": "^0.1.2",
     "bootstrap": "^5.3.2",
@@ -28,7 +29,8 @@
     "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.2",
-    "sql2": "^0.0.1"
+    "sql2": "^0.0.1",
+    "undici-types": "^8.4.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
