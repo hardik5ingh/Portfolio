@@ -19,9 +19,11 @@ const db = mysql.createConnection({
 });
 
 
-
+if(!process.env.GOOGLE_CREDENTIALS){
+  throw new Error("GOOGLE_CREDENTIALS environment variable not found");
+}
 const auth = new google.auth.GoogleAuth({
-  keyFile: "credentials.json",
+  credentials:JSON.parse(process.env.GOOGLE_CREDENTIALS),
   scopes: ["https://www.googleapis.com/auth/spreadsheets"]
 });
 
