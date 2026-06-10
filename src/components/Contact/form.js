@@ -7,18 +7,18 @@ import { google } from "googleapis";
 dotenv.config({ path: '.env' });
 
 const app = express();
-app.use(cors({ origin: 'https://hardik5ingh.netlify.app/' }));
+app.use(cors({ origin: 'https://hardik5ingh.netlify.app' }));
 app.use(express.json());
 
-// const db = mysql.createConnection({
-//   host: process.env.DB_HOST,
-//   user: process.env.DB_USER,
-//   password: process.env.DB_PASSWORD || "",
-//   database: process.env.DB_NAME,
-//   port: process.env.DB_PORT
-// });
+const db = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD || "",
+  database: process.env.DB_NAME,
+  port:process.env.DB_PORT
+});
 
-const db=mysql.createConnection(process.env.MYSQL_URL);
+
 
 const auth = new google.auth.GoogleAuth({
   keyFile: "credentials.json",
@@ -58,5 +58,5 @@ app.post("/api/contact", (req, res) => {
   });
 });
 
-const port=process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`API running on ${port}`));
