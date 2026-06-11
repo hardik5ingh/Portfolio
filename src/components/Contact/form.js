@@ -15,15 +15,15 @@ const db = mysql.createConnection({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD || "",
   database: process.env.DB_NAME,
-  port:process.env.DB_PORT
+  port: process.env.DB_PORT
 });
 
-
-if(!process.env.GOOGLE_CREDENTIALS){
+if (!process.env.GOOGLE_CREDENTIALS) {
   throw new Error("GOOGLE_CREDENTIALS environment variable not found");
 }
+
 const auth = new google.auth.GoogleAuth({
-  credentials:JSON.parse(process.env.GOOGLE_CREDENTIALS),
+  credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
   scopes: ["https://www.googleapis.com/auth/spreadsheets"]
 });
 
@@ -38,7 +38,7 @@ async function appendToSheet(name, email, subject, message) {
       range: 'Sheet1!A:E',
       valueInputOption: 'RAW',
       requestBody: {
-        values: [[new Date().toLocaleString(), name, email, subject, message]],
+        values: [[new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }), name, email, subject, message]],
       },
     });
     console.log("Sheet updated successfully!");
@@ -52,8 +52,8 @@ app.post("/api/contact", (req, res) => {
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Name, email, and message are required.' });
   }
-  const sql = 'INSERT INTO portfolio (Name, Email, Subject, Message) VALUES (?, ?, ?, ?)';
-  db.query(sql, [name, email, subject, message], async (err, result) => { 
+  const sql = 'INSERT INTO portfolio (Name, Email, Subject, Message, CreatedAt) VALUES (?, ?, ?, ?, ?)';
+  db.query(sql, [name, email, subject, message, new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })], async (err, result) => {
     if (err) return res.status(500).json({ error: "database error" });
     await appendToSheet(name, email, subject, message);
     res.json({ success: true, id: result.insertId });
