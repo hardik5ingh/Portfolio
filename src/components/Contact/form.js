@@ -7,15 +7,42 @@ import { google } from "googleapis";
 dotenv.config({ path: '.env' });
 
 const app = express();
-app.use(cors({ origin: 'https://hardik5ingh.netlify.app' }));
+
+const allowedOrigins = [
+  'http://localhost:5173',          
+  'http://localhost:3000',          
+  'https://hardik5ingh.netlify.app' 
+];
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+
 app.use(express.json());
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD || "",
+  password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: process.env.DB_PORT
+  port: Number(process.env.DB_PORT) || 4000,
+  ssl: {
+    rejectUnauthorized: true 
+  }
+});
+
+db.connect((err) => {
+  if (err) {
+    console.error('TiDB Connection Error:', err.message);
+  } else {
+    console.log('Connected to TiDB Cloud successfully!');
+  }
 });
 
 if (!process.env.GOOGLE_CREDENTIALS) {
@@ -49,16 +76,23 @@ async function appendToSheet(name, email, subject, message) {
 
 app.post("/api/contact", (req, res) => {
   const { name, email, subject, message } = req.body;
+  
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Name, email, and message are required.' });
   }
-  const sql = 'INSERT INTO portfolio (Name, Email, Subject, Message, CreatedAt) VALUES (?, ?, ?, ?, ?)';
-  db.query(sql, [name, email, subject, message, new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })], async (err, result) => {
-    if (err) return res.status(500).json({ error: "database error" });
+
+  const sql = 'INSERT INTO form (Name, Email, Subject, Message) VALUES (?, ?, ?, ?)';
+
+  db.query(sql, [name, email, subject, message], async (err, result) => {
+    if (err) {
+      console.error("Database query error:", err);
+      return res.status(500).json({ error: "database error" });
+    }
+    
     await appendToSheet(name, email, subject, message);
     res.json({ success: true, id: result.insertId });
   });
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`API running on ${port}`));
+app.listen(port, () => console.log(`API running on port ${port}`));
